@@ -195,7 +195,6 @@ a{color:inherit;text-decoration:none}
     <div class="gate-kicker mono">SEPTEMBER 10 · 00:00 WIB</div>
     <div class="gate-title serif">For<br>Sasya.</div>
     <div class="gate-copy">A private little edition, kept aside for your birthday.</div>
-    <button class="gate-button" id="preview">Preview the edition</button>
     <div class="gate-note">The actual page opens on September 10.</div>
   </div>
 </div>
@@ -386,10 +385,8 @@ a{color:inherit;text-decoration:none}
 
 <script>
 const gate=document.getElementById('gate');
-const preview=document.getElementById('preview');
 const unlock=new Date('2026-09-10T00:00:00+07:00');
 if(new Date()>=unlock){gate.classList.add('hidden');document.body.classList.remove('locked')}
-preview.addEventListener('click',()=>{gate.classList.add('hidden');document.body.classList.remove('locked')});
 
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.14});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
